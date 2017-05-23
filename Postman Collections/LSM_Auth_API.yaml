@@ -7,7 +7,7 @@ info:
     name: MIT
     url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
 host: lsm-lb-1481639842.us-west-2.elb.amazonaws.com
-basePath: /
+basePath: /api/user
 schemes:
 - http
 consumes:
@@ -15,7 +15,7 @@ consumes:
 produces:
 - application/json
 paths:
-  /api/user/:
+  /:
     post:
       description: 'TODO: Add Description'
       summary: Create or Sign Up User
@@ -43,7 +43,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /api/user/
+          uri: /
           headers:
             Content-Type: application/json
           body: "{ \"full_name\": \"Test Test\",\n  \"email\": \"test1@gmail.com\",\n  \"password\": \"12345678\",\n  \"designation\":\n   { \"_id\": \"5910706f501670b4b2c343c0\",\n     \"designation\": \"Project Manager\" \n   } \n}"
@@ -63,7 +63,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/user/login:
+  /login:
     post:
       description: 'TODO: Add Description'
       summary: Login or SIgn In User
@@ -91,7 +91,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /api/user/login
+          uri: /login
           headers:
             Content-Type: application/json
           body: '{ "email": "test1@gmail.com", "password": "12345678" }'
@@ -111,7 +111,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/user/forget:
+  /forget:
     post:
       description: 'TODO: Add Description'
       summary: Reset or Forget Password
@@ -139,7 +139,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /api/user/forget
+          uri: /forget
           headers:
             Content-Type: application/json
           body: '{ "email": "test1@gmail.com"}'
@@ -159,7 +159,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/user/reset/2713fe34e38843a27cb392ba50ececa12b91fdd9:
+  /reset/2713fe34e38843a27cb392ba50ececa12b91fdd9:
     get:
       description: 'TODO: Add Description'
       summary: Link to access the Token for password update
@@ -176,7 +176,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /api/user/reset/2713fe34e38843a27cb392ba50ececa12b91fdd9
+          uri: /reset/2713fe34e38843a27cb392ba50ececa12b91fdd9
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -193,7 +193,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/user/updatePass:
+  /updatePass:
     post:
       description: 'TODO: Add Description'
       summary: Update Password after redirecting for URL
@@ -221,7 +221,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /api/user/updatePass
+          uri: /updatePass
           headers:
             Content-Type: application/json
           body: >-
@@ -246,7 +246,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/user/uploadprofilepic/5923e0eae169ce78cf103533:
+  /uploadprofilepic/5923e0eae169ce78cf103533:
     post:
       description: 'TODO: Add Description'
       summary: Upload Profile Picture
@@ -268,7 +268,7 @@ paths:
       x-unitTests:
       - request:
           method: POST
-          uri: /api/user/uploadprofilepic/5923e0eae169ce78cf103533
+          uri: /uploadprofilepic/5923e0eae169ce78cf103533
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -287,7 +287,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /api/user/getallDesignation:
+  /getallDesignation:
     get:
       description: 'TODO: Add Description'
       summary: Get All Designation
@@ -304,7 +304,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /api/user/getallDesignation
+          uri: /getallDesignation
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -321,7 +321,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  //api/user/test:
+  /test:
     get:
       description: 'TODO: Add Description'
       summary: Test Api To check server is running or not
@@ -338,7 +338,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: //api/user/test
+          uri: /test
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
