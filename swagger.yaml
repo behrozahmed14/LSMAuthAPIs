@@ -1,0 +1,430 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: LSM Auth API
+  description: 'TODO: Add Description'
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: lsm-lb-1481639842.us-west-2.elb.amazonaws.com
+basePath: /api/user
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /:
+    post:
+      description: 'TODO: Add Description'
+      summary: Create or Sign Up User
+      tags:
+      - Misc
+      operationId: Create or Sign Up User
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/CreateOrSignUpUserrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /
+          headers:
+            Content-Type: application/json
+          body: "{ \"full_name\": \"Test Test\",\n  \"email\": \"test1@gmail.com\",\n  \"password\": \"12345678\",\n  \"designation\":\n   { \"_id\": \"5910706f501670b4b2c343c0\",\n     \"designation\": \"Project Manager\" \n   } \n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Create or Sign Up User
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /login:
+    post:
+      description: 'TODO: Add Description'
+      summary: Login or SIgn In User
+      tags:
+      - Misc
+      operationId: Login or SIgn In User
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/LoginOrSignInUserrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /login
+          headers:
+            Content-Type: application/json
+          body: '{ "email": "test1@gmail.com", "password": "12345678" }'
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Login or SIgn In User
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /forget:
+    post:
+      description: 'TODO: Add Description'
+      summary: Reset or Forget Password
+      tags:
+      - Misc
+      operationId: Reset or Forget Password
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/ResetOrForgetPasswordrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /forget
+          headers:
+            Content-Type: application/json
+          body: '{ "email": "test1@gmail.com"}'
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Reset or Forget Password
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /reset/2713fe34e38843a27cb392ba50ececa12b91fdd9:
+    get:
+      description: 'TODO: Add Description'
+      summary: Link to access the Token for password update
+      tags:
+      - Misc
+      operationId: Link to access the Token for password update
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /reset/2713fe34e38843a27cb392ba50ececa12b91fdd9
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Link to access the Token for password update
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /updatePass:
+    post:
+      description: 'TODO: Add Description'
+      summary: Update Password after redirecting for URL
+      tags:
+      - Misc
+      operationId: Update Password after redirecting for URL
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/UpdatePasswordAfterRedirectingForUrlrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /updatePass
+          headers:
+            Content-Type: application/json
+          body: >-
+            {
+            	"token":"2713fe34e38843a27cb392ba50ececa12b91fdd9",
+            	"new_password":"12345678",
+            	"confirm_Password":"12345678"
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Update Password after redirecting for URL
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /uploadprofilepic/5923e0eae169ce78cf103533:
+    post:
+      description: 'TODO: Add Description'
+      summary: Upload Profile Picture
+      tags:
+      - Misc
+      operationId: Upload Profile Picture
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /uploadprofilepic/5923e0eae169ce78cf103533
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Upload Profile Picture
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /getallDesignation:
+    get:
+      description: 'TODO: Add Description'
+      summary: Get All Designation
+      tags:
+      - Misc
+      operationId: Get All Designation
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /getallDesignation
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get All Designation
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /test:
+    get:
+      description: 'TODO: Add Description'
+      summary: Test Api To check server is running or not
+      tags:
+      - Misc
+      operationId: Test Api To check server is running or not
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /test
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Test Api To check server is running or not
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  CreateOrSignUpUserrequest:
+    title: Create or Sign Up UserRequest
+    type: object
+    properties:
+      full_name:
+        description: ''
+        type: string
+      email:
+        description: ''
+        type: string
+      password:
+        description: ''
+        type: string
+      designation:
+        $ref: '#/definitions/Designation'
+    required:
+    - full_name
+    - email
+    - password
+    - designation
+  Designation:
+    title: Designation
+    type: object
+    properties:
+      _id:
+        description: ''
+        type: string
+      designation:
+        description: ''
+        type: string
+    required:
+    - _id
+    - designation
+  LoginOrSignInUserrequest:
+    title: Login or SIgn In UserRequest
+    type: object
+    properties:
+      email:
+        description: ''
+        type: string
+      password:
+        description: ''
+        type: string
+    required:
+    - email
+    - password
+  ResetOrForgetPasswordrequest:
+    title: Reset or Forget PasswordRequest
+    type: object
+    properties:
+      email:
+        description: ''
+        type: string
+    required:
+    - email
+  UpdatePasswordAfterRedirectingForUrlrequest:
+    title: Update Password after redirecting for URLRequest
+    type: object
+    properties:
+      token:
+        description: ''
+        type: string
+      new_password:
+        description: ''
+        type: string
+      confirm_Password:
+        description: ''
+        type: string
+    required:
+    - token
+    - new_password
+    - confirm_Password
